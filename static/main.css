@@ -2,4 +2,88 @@ body
 {
 	background-color: 2d2d2d;
 	font-family: 'Open Sans', serif;
+	color: dcdcdc;
+}
+button::-moz-focus-inner { border: 0; }
+
+.button
+{
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	
+	cursor: pointer;
+	border: 0px;
+	position: relative;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgba(219,87,5,1);
+    font-size: 1em;
+    display: block;
+    padding: 4px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 0px rgba(219,31,5,1), 0px 9px 12px rgba(0,0,0,1);
+    margin: 100px auto;
+	text-align: center;
+}
+
+.button:active 
+{
+    box-shadow: 0px 2px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,1);
+    position: relative;
+    top: 3px;
+}
+
+.button:focus 
+{
+    border: none;
+    outline: none;
+}
+
+/* Hide the spinners in firefox (by disguising as textbox.
+ * Also provides some nice theming. */
+input[type='number']
+{
+	-moz-appearance:textfield;
+	display: inline-block;
+	box-sizing: border-box;
+	cursor: pointer;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 45pt;
+	padding: 4px;
+	overflow: hidden;
+	border: none;
+	border-radius: 5px;
+	font-size: 1em;
+	color: rgba(140,140,140,1);
+	text-decoration: normal;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	background: rgba(40,40,40,0.4);
+	box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5) inset;
+}
+
+input[type='number']:hover 
+{
+	background-color: rgba(0,0,0,0.4);
+	color: dcdcdc;
+}
+
+input[type='number']:focus 
+{
+	cursor: default;
+	background-color: rgba(0,0,0,0.4);
+	color: dcdcdc;
+}
+
+/*Hide the spinner arrows on webkit browsers*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
 }
