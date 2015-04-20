@@ -10,7 +10,7 @@ var main = function()
 {					
 	var graph = document.getElementById("graph");
 	var style = window.getComputedStyle(graph, null);
-	var margin = {top: 20, right: 40, bottom: 20, left: 40};
+	var margin = {top: 50, right: 20, bottom: 50, left: 50};
 	var boxWidth = parseInt(style.getPropertyValue("width"));
 	var boxHeight = parseInt(style.getPropertyValue("height"));
 	var width = boxWidth - margin.left - margin.right;
@@ -22,11 +22,11 @@ var main = function()
 		.attr("height", height + margin.top + margin.bottom);
 	
 	var xScale = d3.scale.linear()
-		.domain([0,450])
+		.domain([0, 100])
 		.range([0, width])
 		
 	var yScale = d3.scale.linear()
-		.domain([0,450])
+		.domain([0, 1.0])
 		.range([height, 0])
 		
 	var xAxis = d3.svg.axis()
@@ -70,6 +70,28 @@ var main = function()
 		.attr("class", "axis")
 		.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 		.call(yAxis);
+		
+	svg.append("text")
+        .attr("x", margin.left + width/2)             
+        .attr("y", margin.top / 2)
+        .attr("text-anchor", "middle")  
+        .attr("class", "graphTitle")
+        .text("Effect of Natural Selection");
+    
+    svg.append("text")
+        .attr("x", margin.left + width/2)             
+        .attr("y", margin.top + height + 40)
+        .attr("text-anchor", "middle")  
+        .attr("class", "graphXLabel")
+        .text("Generations");
+    
+    svg.append("text")
+		.attr("transform", "rotate(-90)")//This messes with the coordinate system!
+		.attr("x", -height/2 - margin.top)
+		.attr("y", margin.left - 40)
+        .attr("text-anchor", "middle")  
+        .attr("class", "graphYLabel")
+        .text("Frequency (p)");
 }
 
 var LineGraph = function(data, options)
