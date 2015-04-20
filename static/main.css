@@ -5,6 +5,12 @@ body
 	color: dcdcdc;
 }
 
+@font-face 
+{
+	font-family: "Open Sans";
+	src: url("../static/OpenSans-Regular.ttf") format("truetype");
+}
+
 button::-moz-focus-inner { border: 0; }
 
 #submit
