@@ -4,6 +4,7 @@ body
 	font-family: 'Open Sans', serif;
 	color: dcdcdc;
 }
+
 button::-moz-focus-inner { border: 0; }
 
 #submit
