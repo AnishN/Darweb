@@ -17,6 +17,7 @@ def hello():
 with app.test_request_context():
 	pass
 	#url_for('static', filename='main.css')
+	#url_for('static', filename='chartist.min.css')
     
 if __name__ == '__main__':
     app.run()
