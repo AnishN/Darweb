@@ -1,0 +1,57 @@
+<html>
+<head>
+	<script type="text/javascript" src="../static/d3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/simulation.css">
+	<!--<link rel="stylesheet" type='text/css' href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300">-->
+	<script src = "../static/line-graph.js"> </script>
+	<script src = "../static/natural-selection.js"> </script>
+</head>
+
+<body onload=main()>
+	<h1>Natural Selection Simulation</h1>
+	<p class = "back">(Click <a href="./" class = "backlink">HERE</a> to go back to the home page)</p>
+	
+	<span class = "simulationInfo">
+	<h3 class="subHeader">Description:</h3>
+	This simulation illustrates how allele frequencies change over time in response to natural selection on diploid genotypes. 
+	Users may set fitnesses from 0.0 to 1.0 for each of the three genotypes. 
+	The number of generations is fixed at 100. 
+	Results from different iterations are displayed simultaneously in different colors.
+	</span>
+	
+	<form id = "form1" method="POST">
+		<label>p:</label>
+		<input type="number" name="p" id="p" min="0.00" max="1.00" step="0.01" value="0.50">
+		<label>w<sub>11</sub>:</label>
+		<input type="number" name="w11" id="w11" min="0.00" max="1.00" step="0.01" value="0.50">
+		<label>w<sub>12</sub>:</label>
+		<input type="number" name="w12" id="w12" min="0.00" max="1.00" step="0.01" value="0.50">
+		<label>w<sub>22</sub>:</label>
+		<input type="number" name="w22" id="w22" min="0.00" max="1.00" step="0.01" value="0.50">
+		<button type="button" class = "button" id = "submit" onclick = "submitData()">Submit</button>
+		<button type="button" class = "button" id = "clear" onclick = "clearData()">Clear</button>
+	</form>
+	
+	<div id="graph"></div>
+	
+	<span class = "simulationInfo">
+	<h3 class="subHeader">Instructions:</h3>
+	<ul class="list">
+	<li>Set a starting allele frequency from the first list box (range: 0.0 to 1.0; default: p = 0.5).
+	<li>Set a fitness of A<sub>11</sub> (range: 0.0 to 1.0; default: w<sub>11</sub> = 0.5).
+	<li>Set a fitness of A<sub>12</sub> (range: 0.0 to 1.0; default: w<sub>12</sub> = 0.5).
+	<li>Set a fitness of A<sub>22</sub> (range: 0.0 to 1.0; default: w<sub>22</sub> = 0.5).
+	<li>Push "Start" to begin a simulation. 
+	<li>Push "Clear" to clear the accumulated results and start over.
+	</ul>
+	
+	<h3 class="subHeader">How to intepret the graph:</h3>
+	<ul class="list">
+	<li>The vertical axis shows allele frequency. 
+	<li>The horizontal axis shows generation number. 
+	<li>Each color corresponds to a different iteration.
+	</ul>
+	</span>
+	
+</body>
+</html>

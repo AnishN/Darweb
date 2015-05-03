@@ -1,0 +1,228 @@
+body
+{
+	background-color: 2d2d2d;
+	font-family: 'Open Sans', serif;
+	color: dcdcdc;
+}
+
+@font-face
+{
+	font-family: "Open Sans";
+	src: url("../static/OpenSans-Regular.ttf") format("truetype");
+}
+
+h1
+{
+	display: table;
+	margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    /*letter-spacing: 5px;*/
+	text-shadow: 0px 3px 6px rgba(0,0,0,1);
+}
+
+.list
+{
+    margin: 0px;
+}
+
+.subHeader
+{
+    margin-bottom: 0px;
+    text-shadow: 0px 3px 6px rgba(0,0,0,1);
+}
+
+.back
+{
+	display: table;
+	margin-left: auto;
+    margin-right: auto;
+    margin-top: 0px;
+    font-size: 0.7em;
+}
+
+.backlink
+{
+	color: rgba(219,87,5,1);
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.simulationInfo
+{
+	display: table;
+	margin-top: 0px;
+	width: 700px;
+	margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+button::-moz-focus-inner { border: 0; }
+
+#submit
+{
+	display: inline-block;
+	position: relative;
+	margin-right: 20px;
+	vertical-align: text-bottom;
+}
+
+#clear
+{
+	display: inline-block;
+	position: relative;
+	margin-right: 20px;
+	vertical-align: text-bottom;
+}
+
+.button
+{
+	-webkit-tap-highlight-color: rgba(0,0,0,0); 
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	
+	cursor: pointer;
+	border: 0px;
+    color: rgba(255,255,255,1);
+    text-decoration: none;
+    background-color: rgba(219,87,5,1);
+    font-size: 1em;
+    padding:4px;
+    border-radius: 5px;
+    box-shadow: 0px 5px 0px rgba(219,31,5,1), 0px 9px 12px rgba(0,0,0,1);
+	text-align: center;
+}
+
+.button:active 
+{
+    box-shadow: 0px 2px 0px rgba(219,31,5,1), 0px 3px 6px rgba(0,0,0,1);
+    position: relative;
+    top: 3px;
+}
+
+.button:focus 
+{
+    border: none;
+    outline: none;
+}
+
+/* Container for the d3 graph.
+ * Centered in the screen under the form controls.
+ * Has a few stylistic flourishes!
+*/
+
+#graph
+{
+	width: 550px;
+	height: 400px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 0px 3px 6px rgba(0,0,0,1);
+	border-radius: 5px;
+	background-color: 5d5d5d;
+	padding: 20px;
+}
+
+.axis path, .axis line 
+{
+	fill: none;
+	stroke: #dcdcdc;
+	stroke-width: 1px;
+	shape-rendering: crispEdges;
+}
+
+.gridLines
+{
+	shape-rendering: crispEdges;
+	stroke: #dcdcdc;
+	stroke-width: 1px;
+	stroke-dasharray: 5,5;
+	stroke-opacity: 0.2;
+}
+
+.graphTitle
+{
+	fill: #dcdcdc;
+	font-weight: bold;
+	font-size: 1.2em;
+	
+}
+
+.graphXLabel
+{
+	fill: #dcdcdc;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.graphYLabel
+{
+	fill: #dcdcdc;
+	font-size: 0.8em;
+	font-weight: bold;
+}
+
+.axis text 
+{
+	font-size: 0.7em;
+	fill: #dcdcdc;
+}
+
+#form1
+{
+	white-space: nowrap;
+	text-align: center;
+}
+
+/* Hide the spinners in firefox (by disguising as textbox.
+ * Also provides some nice theming. */
+input[type='number']
+{
+	-moz-appearance:textfield;
+	display: inline-block;
+	box-sizing: border-box;
+	cursor: pointer;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 45pt;
+	padding: 4px;
+	overflow: hidden;
+	border: none;
+	border-radius: 5px;
+	font-size: 1em;
+	color: rgba(140,140,140,1);
+	text-decoration: normal;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	background: rgba(40,40,40,0.4);
+	box-shadow: 0px 1px 5px 1px rgba(0,0,0,0.5) inset;
+	margin-right: 20px;
+}
+
+input[type='number']:hover 
+{
+	background-color: rgba(0,0,0,0.4);
+	color: dcdcdc;
+}
+
+input[type='number']:focus 
+{
+	cursor: default;
+	background-color: rgba(0,0,0,0.4);
+	color: dcdcdc;
+}
+
+/*Hide the spinner arrows on webkit browsers*/
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
