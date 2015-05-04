@@ -1,0 +1,50 @@
+<html>
+<head>
+	<script type="text/javascript" src="../static/d3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/simulation.css">
+	<!--<link rel="stylesheet" type='text/css' href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300">-->
+	<script src = "../static/line-graph.js"> </script>
+	<script src = "../static/mean-fitness.js"> </script>
+</head>
+
+<body onload=main()>
+	<h1>Mean Fitness Simulation</h1>
+	<p class = "back">(Click <a href="./" class = "backlink">HERE</a> to go back to the home page)</p>
+	
+	<span class = "simulationInfo">
+	<h3 class="subHeader">Description:</h3>
+	This simulation illustrates the relationship between allele frequency and population mean fitness for a simple one-locus, two-allele model of viability selection. 
+	Users may enter in a variety of different fitnesses from 0.0 to 1.0.
+	</span>
+	
+	<form id = "form1" method="POST">
+		<label>w<sub>11</sub>:</label>
+		<input type="number" name="w11" id="w11" min="0.00" max="1.00" step="0.01" value="0.50">
+		<label>w<sub>12</sub>:</label>
+		<input type="number" name="w12" id="w12" min="0.00" max="1.00" step="0.01" value="0.50">
+		<label>w<sub>22</sub>:</label>
+		<input type="number" name="w22" id="w22" min="0.00" max="1.00" step="0.01" value="0.50">
+		<button type="button" class = "button" id = "submit" onclick = "submitData()">Submit</button>
+		<button type="button" class = "button" id = "clear" onclick = "clearData()">Clear</button>
+	</form>
+	
+	<div id="graph"></div>
+	
+	<span class = "simulationInfo">
+	<h3 class="subHeader">Instructions:</h3>
+	<ul class="list">
+	<li>Set a fitness of A<sub>11</sub> (range: 0.0 to 1.0; default: w<sub>11</sub> = 0.5).
+	<li>Set a fitness of A<sub>12</sub> (range: 0.0 to 1.0; default: w<sub>12</sub> = 0.5).
+	<li>Set a fitness of A<sub>22</sub> (range: 0.0 to 1.0; default: w<sub>22</sub> = 0.5).
+	<li>Push "Start" to begin a simulation. 
+	<li>Push "Clear" to clear the accumulated results and start over.
+	</ul>
+	
+	<h3 class="subHeader">How to intepret the graph:</h3>
+	<ul class="list">
+	<li>The vertical axis shows the mean fitness corresponding to different allele frequencies on the horizontal axis.
+	</ul>
+	</span>
+	
+</body>
+</html>

@@ -17,6 +17,10 @@ def natural_selection():
 @app.route('/genetic-drift')
 def genetic_drift():
 	return render_template("genetic-drift.html")
+
+@app.route('/mean-fitness')
+def mean_fitness():
+	return render_template("mean-fitness.html")
     
 if __name__ == '__main__':
     app.run()
