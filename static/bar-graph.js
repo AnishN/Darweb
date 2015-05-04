@@ -1,4 +1,4 @@
-var LineGraph = function(containerId, options)
+var BarGraph = function(containerId, options)
 {
 	var div = document.getElementById(containerId);
 	var style = window.getComputedStyle(div, null);
@@ -29,7 +29,7 @@ var LineGraph = function(containerId, options)
 	this.lineColors = [];
 }
 
-LineGraph.prototype.setXScale = function()
+BarGraph.prototype.setXScale = function()
 {
 	var xScale = d3.scale.linear()
 		.domain(this.xDomain)
@@ -37,7 +37,7 @@ LineGraph.prototype.setXScale = function()
 	return xScale;
 }
 
-LineGraph.prototype.setXAxis = function()
+BarGraph.prototype.setXAxis = function()
 {
 	var xAxis = d3.svg.axis()
 		.scale(this.xScale)
@@ -46,7 +46,7 @@ LineGraph.prototype.setXAxis = function()
 	return xAxis;
 }
 
-LineGraph.prototype.setYScale = function()
+BarGraph.prototype.setYScale = function()
 {
 	var yScale = d3.scale.linear()
 		.domain(this.yDomain)
@@ -54,7 +54,7 @@ LineGraph.prototype.setYScale = function()
 	return yScale;
 }
 
-LineGraph.prototype.setYAxis = function()
+BarGraph.prototype.setYAxis = function()
 {
 	var yAxis = d3.svg.axis()
 		.scale(this.yScale)
@@ -63,7 +63,7 @@ LineGraph.prototype.setYAxis = function()
 	return yAxis;
 }
 
-LineGraph.prototype.drawGrid = function()
+BarGraph.prototype.drawGrid = function()
 {
 	this.svg.selectAll("line.x")
 		.data(this.xScale.ticks(10))
@@ -88,7 +88,7 @@ LineGraph.prototype.drawGrid = function()
 		.attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")")
 }
 
-LineGraph.prototype.drawTitle = function()
+BarGraph.prototype.drawTitle = function()
 {
 	this.svg.append("text")
         .attr("x", this.margin.left + this.width / 2)             
@@ -98,7 +98,7 @@ LineGraph.prototype.drawTitle = function()
         .text(this.title);
 }
 
-LineGraph.prototype.drawXAxis = function()
+BarGraph.prototype.drawXAxis = function()
 {
 	this.svg.append("g")
 		.attr("class", "axis")
@@ -113,7 +113,7 @@ LineGraph.prototype.drawXAxis = function()
         .text(this.xTitle);
 }
 
-LineGraph.prototype.drawYAxis = function()
+BarGraph.prototype.drawYAxis = function()
 {
 	this.svg.append("g")
 		.attr("class", "axis")
@@ -129,7 +129,7 @@ LineGraph.prototype.drawYAxis = function()
         .text(this.yTitle);
 }
 
-LineGraph.prototype.drawData = function()
+BarGraph.prototype.drawData = function()
 {
 	
 	if(this.data.length != 0)
@@ -145,7 +145,7 @@ LineGraph.prototype.drawData = function()
 				.y(function(d) { return yScale(d.y); })
 				.interpolate("linear");
 			
-			var lineGraph = this.svg.append("path")
+			var barGraph = this.svg.append("path")
 				.attr("d", lineFunction(this.data[i]))
 				.attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")")
 				.attr("stroke", this.lineColors[i])
@@ -157,7 +157,7 @@ LineGraph.prototype.drawData = function()
 	}
 }
 
-LineGraph.prototype.draw = function()
+BarGraph.prototype.draw = function()
 {
 	d3.selectAll("svg > *").remove();//clears the entirety of d3
 	this.drawTitle()
@@ -167,7 +167,7 @@ LineGraph.prototype.draw = function()
 	this.drawData()
 }
 
-LineGraph.prototype.addLineData = function(data)
+BarGraph.prototype.addLineData = function(data)
 {
 	this.data.push(data)
 	var color = Math.floor(Math.random() * 16777216).toString(16);

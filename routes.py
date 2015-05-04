@@ -25,6 +25,14 @@ def mean_fitness():
 @app.route('/selection-drift')
 def selection_drift():
 	return render_template("selection-drift.html")
+
+@app.route('/drift-mutation')
+def drift_mutation():
+	return render_template("drift-mutation.html")
+
+@app.route('/drift-migration')
+def drift_migration():
+	return render_template("drift-migration.html")
     
 if __name__ == '__main__':
     app.run()

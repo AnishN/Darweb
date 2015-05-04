@@ -1,0 +1,47 @@
+<html>
+<head>
+	<script type="text/javascript" src="../static/d3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/simulation.css">
+	<!--<link rel="stylesheet" type='text/css' href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300">-->
+	<script src = "../static/bar-graph.js"> </script>
+	<script src = "../static/drift-mutation.js"> </script>
+</head>
+
+<body onload=main()>
+	<h1>Genetic Drift and Mutation Simulation</h1>
+	<p class = "back">(Click <a href="./" class = "backlink">HERE</a> to go back to the home page)</p>
+	
+	<span class = "simulationInfo">
+	<h3 class="subHeader">Description:</h3>
+	This simulation illustrates the interaction between mutation and genetic drift. 
+	Users may set population sizes (25 to 250), mutation rates (0 to 0.01). 
+	32 populations are simulated simultaneously and the results are displayed as a frequency histogram.
+	</span>
+	
+	<form id = "form1" method="POST">
+		<label>N:</label>
+		<input type="number" name="N" id="N" min="25" max="250" step="1" value="100">
+		<label>Mu:</label>
+		<input type="number" name="Mu" id="Mu" min="0.0" max="0.01" step="0.0001" value="0.001">
+		<button type="button" class = "button" id = "submit" onclick = "submitData()">Iterate</button>
+	</form>
+	
+	<div id="graph"></div>
+	
+	<span class = "simulationInfo">
+	<h3 class="subHeader">Instructions:</h3>
+	<ul class="list">
+	<li>Set a population size (range: 25 to 250; default: N = 100).
+	<li>Set a mutation rate (range: 0 to 0.01; default: Mu = 0.001).
+	<li>Push "Iterate" to iterate for ten generations. (You may push this repeatedly to follow the results.)
+	</ul>
+	
+	<h3 class="subHeader">How to intepret the graph:</h3>
+	<ul class="list">
+	<li>The horizontal axis shows the population allele frequency. It is divided into ten intervals (0-0.1, 0.1-0.2, etc.).
+	<li>TThe height of each bar corresponds to the number of populations with an allele frequency in that interval. 
+	</ul>
+	</span>
+	
+</body>
+</html>
