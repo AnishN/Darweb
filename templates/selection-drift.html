@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="../static/simulation.css">
 	<!--<link rel="stylesheet" type='text/css' href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300">-->
 	<script src = "../static/line-graph.js"> </script>
-	<script src = "../static/genetic-drift.js"> </script>
+	<script src = "../static/selection-drift.js"> </script>
 </head>
 
 <body onload=main()>
@@ -23,7 +23,7 @@
 	
 	<form id = "form1" method="POST">
 		<label>p:</label>
-		<input type="number" name="p" id="p" min="0.00" max="1.00" step="0.01" value="0.50">
+		<input type="number" name="p" id="p" min="0.00" max="1.00" step="0.01" value="0.01">
 		<label>N:</label>
 		<input type="number" name="N" id="N" min="10" max="1000" step="1" value="50">
 		<label>Generations:</label>
@@ -37,11 +37,12 @@
 	<span class = "simulationInfo">
 	<h3 class="subHeader">Instructions:</h3>
 	<ul class="list">
-	<li>Set a starting allele frequency from the first list box (range: 0.0 to 1.0; default: p = 0.5).
+	<li>Set a starting allele frequency from the first list box (range: 0.0 to 1.0; default: p = 0.01).
 	<li>Set a population size (range: 10 to 1000; default: N = 50).
 	<li>Set a maximum number of generations (range: 50 to 2500; default: 100).
 	<li>Push "Start" to begin a simulation. 
 	<li>Push "Clear" to clear the accumulated results and start over.
+	<li><b><u>REMEMBER</u></b>: There is directional selection in favor of A<sub>1</sub>. The fitnesses are: w<sub>11</sub> = 1.0, w<sub>12</sub> = 0.9, and w<sub>22</sub> = 0.8.
 	</ul>
 	
 	<h3 class="subHeader">How to intepret the graph:</h3>

@@ -1,11 +1,11 @@
 var main = function()
 {					
 	var form = document.getElementById("form1");
-	form.elements["p"].value = 0.5
+	form.elements["p"].value = 0.01
 	form.elements["N"].value = 50
 	form.elements["Generations"].value = 100
 	
-	var title = "Effect of Genetic Drift";
+	var title = "Effect of Natural Selection and Genetic Drift";
 	var xTitle = "Generations";
 	var yTitle = "Frequency (p)";
 	var xDomain = [0, 100];

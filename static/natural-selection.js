@@ -18,13 +18,9 @@ var main = function()
 }
 
 /*Does the actual evolutionary genetics work!*/
-var runSimuation = function(p, fit11, fit12, fit22)
+var runSimuation = function(p, w11, w12, w22)
 {
 	var numGen = 100
-	var maxAbsFit = Math.max(fit11, fit12, fit22)
-	var w11 = fit11 / maxAbsFit
-	var w12 = fit12 / maxAbsFit
-	var w22 = fit22 / maxAbsFit
 	var data = [{x: 0, y: p}]
 	
 	for(var i = 1; i < numGen + 1; i++)
