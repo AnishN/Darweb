@@ -13,6 +13,10 @@ def index():
 @app.route('/natural-selection')
 def natural_selection():
 	return render_template("natural-selection.html")
+
+@app.route('/genetic-drift')
+def genetic_drift():
+	return render_template("genetic-drift.html")
     
 if __name__ == '__main__':
     app.run()

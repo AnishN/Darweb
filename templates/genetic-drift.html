@@ -1,0 +1,55 @@
+<html>
+<head>
+	<script type="text/javascript" src="../static/d3.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="../static/simulation.css">
+	<!--<link rel="stylesheet" type='text/css' href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300">-->
+	<script src = "../static/line-graph.js"> </script>
+	<script src = "../static/genetic-drift.js"> </script>
+</head>
+
+<body onload=main()>
+	<h1>Genetic Drift Simulation</h1>
+	<p class = "back">(Click <a href="./" class = "backlink">HERE</a> to go back to the home page)</p>
+	
+	<span class = "simulationInfo">
+	<h3 class="subHeader">Description:</h3>
+	This simulation illustrates how allele frequencies change over time as a result of genetic drift in small populations. 
+	Users may set starting allele frequencies (0.0 to 1.0),
+	population sizes (10 to 250),
+	and numbers of generations for the simulation (50 to 250).
+	Results from different iterations are displayed simultaneously in different colors.
+	</span>
+	
+	<form id = "form1" method="POST">
+		<label>p:</label>
+		<input type="number" name="p" id="p" min="0.00" max="1.00" step="0.01" value="0.50">
+		<label>N:</label>
+		<input type="number" name="N" id="N" min="10" max="1000" step="1" value="50">
+		<label>Generations:</label>
+		<input type="number" name="Generations" id="Generations" min="50" max="2500" step="1" value="100">
+		<button type="button" class = "button" id = "submit" onclick = "submitData()">Submit</button>
+		<button type="button" class = "button" id = "clear" onclick = "clearData()">Clear</button>
+	</form>
+	
+	<div id="graph"></div>
+	
+	<span class = "simulationInfo">
+	<h3 class="subHeader">Instructions:</h3>
+	<ul class="list">
+	<li>Set a starting allele frequency from the first list box (range: 0.0 to 1.0; default: p = 0.5).
+	<li>Set a population size (range: 10 to 1000; default: N = 50).
+	<li>Set a maximum number of generations (range: 50 to 2500; default: 100).
+	<li>Push "Start" to begin a simulation. 
+	<li>Push "Clear" to clear the accumulated results and start over.
+	</ul>
+	
+	<h3 class="subHeader">How to intepret the graph:</h3>
+	<ul class="list">
+	<li>The vertical axis shows allele frequency. 
+	<li>The horizontal axis shows generation number. 
+	<li>Each color corresponds to a different iteration.
+	</ul>
+	</span>
+	
+</body>
+</html>
