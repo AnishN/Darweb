@@ -21,6 +21,10 @@ def genetic_drift():
 @app.route('/mean-fitness')
 def mean_fitness():
 	return render_template("mean-fitness.html")
+	
+@app.route('/selection-drift')
+def selection_drift():
+	return render_template("selection-drift.html")
     
 if __name__ == '__main__':
     app.run()
